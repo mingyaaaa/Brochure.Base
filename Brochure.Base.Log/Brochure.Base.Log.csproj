@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+        <Folder Include="Service\" />
+        <Folder Include="Core\" />
+        <Folder Include="Extends\" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="LogServer" Version="1.0.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+        <PackageReference Include="Brochure.Server.MySql" Version="1.0.0.9" />
+        <PackageReference Include="Brochure.Core" Version="1.0.0.23" />
+        <PackageReference Include="HostServer" Version="1.0.0.7" />
+        <PackageReference Include="Brochure.Core.Server" Version="1.0.0.17" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Core\Log.cs" />
+    </ItemGroup>
+</Project>

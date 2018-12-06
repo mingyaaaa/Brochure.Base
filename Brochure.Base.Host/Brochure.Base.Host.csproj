@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="HostServer" Version="1.0.0.7" />
+    <PackageReference Include="Brochure.Server.MySql" Version="1.0.0.9" />
+    <PackageReference Include="Brochure.Core.Server" Version="1.0.0.17" />
+    <PackageReference Include="Brochure.Core" Version="1.0.0.23" />
+  </ItemGroup>
+
+</Project>
