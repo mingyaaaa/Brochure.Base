@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Brochure.Base.Log.Core;
+using Brochure.Base.Logs.Service;
+using Brochure.Core;
+using Brochure.Core.Server;
+using Brochure.Server.MySql;
+using Brochure.Server.MySql.Implements;
+using HostServer.Server;
+using LogServer.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Brochure.Core.Server;
-using Brochure.Core;
-using HostServer.Server;
-using LogServer.Server;
+using System;
+using System.Collections.Generic;
 using Thrift;
-using Brochure.Base.Logs.Service;
-using Brochure.Base.Log.Core;
-using Brochure.Server.MySql;
-using Brochure.Server.MySql.Implements;
-using Brochure.Core.Server.core;
-using Brochure.Core.Server.Enums.sql;
 
 namespace Brochure.Base.Log
 {
@@ -46,7 +39,7 @@ namespace Brochure.Base.Log
 
             DbFactory factory = new MySqlDbFactory(config.DbHost, config.DbUser, config.DbPassword, config.DbPort.ToString());
             DbConnectPool.RegistFactory(factory, DatabaseType.MySql);
-            serviceManager.AddSingleton(new RpcClient<IHostService.Client>());
+            serviceManager.AddSingleton(new RpcClient<IHostService.Client>(LogServer.ServiceKey.Key));
             serviceManager.AddSingleton(config);
             serviceManager.AddSingleton<IClient, MySqlClient>();
             serviceManager.AddSingleton(typeof(LogService));

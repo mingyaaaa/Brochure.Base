@@ -3,3 +3,7 @@
 ################################################################################
 
 /Brochure.Base.Log/obj
+/Brochure.Base.Log/bin/Debug/netcoreapp2.2
+/Brochure.Base.Host/obj
+/Brochure.Base.Host/bin/Debug
+/.vs/Brochure.Base
